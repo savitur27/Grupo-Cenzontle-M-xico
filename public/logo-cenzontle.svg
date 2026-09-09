@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cenzontleGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C5A466" />
+      <stop offset="50%" stop-color="#B59353" />
+      <stop offset="100%" stop-color="#9E7C3E" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background container for high-fidelity export if needed (transparent by default) -->
+  <g id="logo-mark" transform="translate(140, 10)">
+    <!-- Cenzontle Bird Silhouette (Deep Navy #0B213F) -->
+    <!-- Head & Body Arc -->
+    <path 
+      d="M18 108 C14 85 20 54 36 32 C48 16 68 8 90 10 C108 11 122 20 134 32 C146 32 168 38 184 46 C172 52 154 54 140 55 C136 68 126 84 114 96 C98 110 74 118 48 118 C34 118 24 114 18 108 Z" 
+      fill="#0B213F" 
+    />
+    
+    <!-- White plumage inner shape -->
+    <path 
+      d="M48 108 C58 98 68 82 72 65 C76 48 88 34 104 28 C116 35 125 48 126 62 C126 76 116 94 98 104 C82 110 62 110 48 108 Z" 
+      fill="#FFFFFF" 
+    />
+    
+    <!-- Beak -->
+    <path 
+      d="M132 35 L182 46 C176 49 164 52 144 54 L132 44 Z" 
+      fill="#0B213F" 
+    />
+    
+    <!-- Mockingbird Eye stripe / Lores Mask -->
+    <path 
+      d="M92 42 C104 40 118 41 130 44 C122 47 110 47 98 46 Z" 
+      fill="#0B213F" 
+    />
+    
+    <!-- Eye Outer Ring & Pupil -->
+    <circle cx="112" cy="42" r="6.5" fill="#FFFFFF" stroke="#0B213F" stroke-width="1.8" />
+    <circle cx="112" cy="42" r="3.2" fill="#0B213F" />
+    <circle cx="113.5" cy="40.5" r="1" fill="#FFFFFF" />
+  </g>
+
+  <!-- Typography -->
+  <!-- "C E N Z O N T L E" -->
+  <text 
+    x="200" 
+    y="205" 
+    text-anchor="middle" 
+    font-family="'Cinzel', 'Playfair Display', 'Times New Roman', serif" 
+    font-size="44" 
+    font-weight="600" 
+    letter-spacing="14" 
+    fill="#B59353"
+  >
+    CENZONTLE
+  </text>
+
+  <!-- Subtitle: — GRUPO CENZONTLE MÉXICO — -->
+  <!-- Left accent line -->
+  <line x1="45" y1="242" x2="115" y2="242" stroke="#B59353" stroke-width="1.5" />
+  
+  <!-- Subtitle Text -->
+  <text 
+    x="200" 
+    y="246" 
+    text-anchor="middle" 
+    font-family="'Plus Jakarta Sans', 'Montserrat', 'Helvetica', sans-serif" 
+    font-size="13.5" 
+    font-weight="600" 
+    letter-spacing="5" 
+    fill="#B59353"
+  >
+    GRUPO CENZONTLE MÉXICO
+  </text>
+
+  <!-- Right accent line -->
+  <line x1="285" y1="242" x2="355" y2="242" stroke="#B59353" stroke-width="1.5" />
+</svg>

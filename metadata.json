@@ -1,0 +1,7 @@
+{
+  "name": "Grupo Cenzontle",
+  "description": "Sitio web oficial de Grupo Cenzontle con cotizador de construcción interactivo, catálogo de proyectos arquitectónicos y sistema de seguimiento de obra para clientes en tiempo real.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
