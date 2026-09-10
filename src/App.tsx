@@ -7,6 +7,7 @@ import { Cotizador } from './components/Cotizador';
 import { Nosotros } from './components/Nosotros';
 import { Contacto } from './components/Contacto';
 import { Footer } from './components/Footer';
+import { AvisoPrivacidadModal } from './components/AvisoPrivacidadModal';
 import { SeguimientoContainer } from './components/SeguimientoObra/SeguimientoContainer';
 import { AccesoPortal } from './components/SeguimientoObra/AccesoPortal';
 import { FolderKanban, Globe, ArrowUp, Lock, ShieldCheck } from 'lucide-react';
@@ -16,6 +17,10 @@ export default function App() {
   const [currentView, setCurrentView] = useState<'home' | 'seguimiento'>('home');
   const [mostrarBotonSubir, setMostrarBotonSubir] = useState(false);
   const [paqueteObraActivo, setPaqueteObraActivo] = useState<ObraPaqueteCompleto | null>(null);
+  const [modalLegal, setModalLegal] = useState<{ isOpen: boolean; tab: 'privacidad' | 'calidad' }>({
+    isOpen: false,
+    tab: 'privacidad'
+  });
 
   // Verificar si hay sesión activa previa o si entra por enlace directo con parámetro de obra
   useEffect(() => {
@@ -135,7 +140,7 @@ export default function App() {
             <Nosotros />
 
             {/* Contacto & Consultas */}
-            <Contacto />
+            <Contacto onOpenAvisoPrivacidad={() => setModalLegal({ isOpen: true, tab: 'privacidad' })} />
           </div>
         ) : (
           /* Portal de Supervisión Técnica de Obra: Protegido con Acceso por Código */
@@ -155,7 +160,17 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <Footer onNavigate={handleNavigate} />
+      <Footer 
+        onNavigate={handleNavigate} 
+        onOpenLegal={(tab) => setModalLegal({ isOpen: true, tab: tab || 'privacidad' })}
+      />
+
+      {/* Lightbox / Modal de Aviso de Privacidad y Póliza de Calidad */}
+      <AvisoPrivacidadModal 
+        isOpen={modalLegal.isOpen}
+        onClose={() => setModalLegal(prev => ({ ...prev, isOpen: false }))}
+        initialTab={modalLegal.tab}
+      />
 
       {/* Quick View Switcher Floating Pill */}
       <aside 

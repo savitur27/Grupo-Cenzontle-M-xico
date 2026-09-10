@@ -10,7 +10,11 @@ import {
   Building
 } from 'lucide-react';
 
-export const Contacto: React.FC = () => {
+interface ContactoProps {
+  onOpenAvisoPrivacidad?: () => void;
+}
+
+export const Contacto: React.FC<ContactoProps> = ({ onOpenAvisoPrivacidad }) => {
   const [enviado, setEnviado] = useState(false);
   const [form, setForm] = useState({
     nombre: '',
@@ -79,8 +83,8 @@ export const Contacto: React.FC = () => {
                 <div className="text-xs sm:text-sm font-sans">
                   <div className="font-serif-arch text-stone-900 text-base">Comunicaciones Oficiales</div>
                   <div className="text-stone-500 mt-1 leading-relaxed">
-                    contacto@grupocenzontle.mx<br />
-                    licitaciones@grupocenzontle.mx
+                    contacto@grupocenzontle.com<br />
+                    licitaciones@grupocenzontle.com
                   </div>
                 </div>
               </div>
@@ -184,12 +188,25 @@ export const Contacto: React.FC = () => {
                 </div>
 
                 <button
+                  id="contacto-submit-btn"
                   type="submit"
-                  className="w-full py-3.5 bg-stone-900 hover:bg-[#B59353] text-white uppercase tracking-wider font-medium text-xs transition-colors flex items-center justify-center gap-2"
+                  className="w-full py-3.5 bg-stone-900 hover:bg-[#B59353] text-white uppercase tracking-wider font-medium text-xs transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-xs"
                 >
                   <Send className="w-3.5 h-3.5 text-[#B59353] group-hover:text-white" />
                   <span>Transmitir Consulta a Dirección Técnica</span>
                 </button>
+
+                <p className="text-[11px] text-stone-500 text-center leading-relaxed font-sans pt-1">
+                  Al enviar su información, acepta nuestro{' '}
+                  <button
+                    type="button"
+                    onClick={onOpenAvisoPrivacidad}
+                    className="text-[#B59353] hover:text-[#9E7C3E] underline font-medium cursor-pointer"
+                  >
+                    Aviso de Privacidad
+                  </button>
+                  . Sus datos e ideas proyectuales se resguardan bajo confidencialidad profesional.
+                </p>
               </form>
             ) : (
               <div className="text-center py-10">

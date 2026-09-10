@@ -4,9 +4,10 @@ import { HardHat, Calculator, ShieldCheck, Mail, Phone, MapPin, ChevronRight, Lo
 
 interface FooterProps {
   onNavigate: (view: 'home' | 'seguimiento', sectionId?: string) => void;
+  onOpenLegal?: (tab?: 'privacidad' | 'calidad') => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenLegal }) => {
   return (
     <footer className="bg-slate-950 text-white border-t border-slate-800 pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -120,14 +121,24 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         {/* Bottom copyright line */}
         <div className="pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500 font-sans">
           <div>
-            © {new Date().getFullYear()} Grupo Cenzontle S.A. de C.V. Todos los derechos reservados.
+            © {new Date().getFullYear()} Grupo Cenzontle México S.A. de C.V. Todos los derechos reservados.
           </div>
           <div className="flex items-center gap-4 text-xs">
-            <span className="hover:text-stone-300 cursor-pointer">Aviso de Privacidad</span>
+            <button
+              id="footer-aviso-privacidad-btn"
+              onClick={() => onOpenLegal ? onOpenLegal('privacidad') : undefined}
+              className="hover:text-amber-400 cursor-pointer transition-colors"
+            >
+              Aviso de Privacidad
+            </button>
             <span>•</span>
-            <span className="hover:text-stone-300 cursor-pointer">Normativa & Registro D.R.O.</span>
-            <span>•</span>
-            <span className="hover:text-stone-300 cursor-pointer">Póliza de Calidad</span>
+            <button
+              id="footer-poliza-calidad-btn"
+              onClick={() => onOpenLegal ? onOpenLegal('calidad') : undefined}
+              className="hover:text-amber-400 cursor-pointer transition-colors"
+            >
+              Póliza de Calidad
+            </button>
           </div>
         </div>
       </div>
