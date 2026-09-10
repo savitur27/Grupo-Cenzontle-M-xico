@@ -2,50 +2,50 @@
   <defs>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@700&amp;display=swap');
-      .cenzontle-title {
+      .cenzontle-title-light {
         font-family: 'Cinzel', 'Playfair Display', 'Times New Roman', serif;
         font-weight: 700;
         letter-spacing: 12px;
-        fill: #B59353;
+        fill: #F3CA7E;
       }
-      .cenzontle-sub {
+      .cenzontle-sub-light {
         font-family: 'Plus Jakarta Sans', 'Montserrat', 'Helvetica', sans-serif;
         font-weight: 700;
         letter-spacing: 4.5px;
-        fill: #B59353;
+        fill: #E2C285;
       }
     </style>
   </defs>
 
-  <!-- Cenzontle Bird Silhouette (Centered at X=250) -->
-  <g id="logo-bird-mark" transform="translate(151, 12)">
-    <!-- Head, Neck & Back Curve -->
+  <!-- Cenzontle Bird Silhouette Light (Centered at X=250) -->
+  <g id="logo-bird-mark-light" transform="translate(151, 12)">
+    <!-- Head, Neck & Back Curve (Champagne Gold for dark backgrounds) -->
     <path 
       d="M18 108 C14 85 20 54 36 32 C48 16 68 8 90 10 C108 11 122 20 134 32 C146 32 168 38 184 46 C172 52 154 54 140 55 C136 68 126 84 114 96 C98 110 74 118 48 118 C34 118 24 114 18 108 Z" 
-      fill="#0B213F" 
+      fill="#E5C07B" 
     />
     
-    <!-- White plumage inner shape -->
+    <!-- Inner neck / breast contrast shape -->
     <path 
       d="M48 108 C58 98 68 82 72 65 C76 48 88 34 104 28 C116 35 125 48 126 62 C126 76 116 94 98 104 C82 110 62 110 48 108 Z" 
-      fill="#FFFFFF" 
+      fill="#0B132B" 
     />
     
     <!-- Beak facing right -->
     <path 
       d="M132 35 L182 46 C176 49 164 52 144 54 L132 44 Z" 
-      fill="#0B213F" 
+      fill="#E5C07B" 
     />
     
     <!-- Mockingbird Eye stripe / Lores Mask -->
     <path 
       d="M92 42 C104 40 118 41 130 44 C122 47 110 47 98 46 Z" 
-      fill="#0B213F" 
+      fill="#E5C07B" 
     />
     
     <!-- Eye Outer Ring & Pupil -->
-    <circle cx="112" cy="42" r="6.5" fill="#FFFFFF" stroke="#0B213F" stroke-width="1.8" />
-    <circle cx="112" cy="42" r="3.2" fill="#0B213F" />
+    <circle cx="112" cy="42" r="6.5" fill="#0B132B" stroke="#E5C07B" stroke-width="1.8" />
+    <circle cx="112" cy="42" r="3.2" fill="#E5C07B" />
     <circle cx="113.5" cy="40.5" r="1" fill="#FFFFFF" />
   </g>
 
@@ -56,14 +56,14 @@
     y="168" 
     text-anchor="middle" 
     font-size="44" 
-    class="cenzontle-title"
+    class="cenzontle-title-light"
   >
     CENZONTLE
   </text>
 
   <!-- Subtitle: — GRUPO CENZONTLE MÉXICO — -->
   <!-- Left accent line -->
-  <line x1="55" y1="202" x2="132" y2="202" stroke="#B59353" stroke-width="2" />
+  <line x1="55" y1="202" x2="132" y2="202" stroke="#E2C285" stroke-width="2" />
   
   <!-- Subtitle Text -->
   <text 
@@ -71,11 +71,11 @@
     y="207" 
     text-anchor="middle" 
     font-size="13.5" 
-    class="cenzontle-sub"
+    class="cenzontle-sub-light"
   >
     GRUPO CENZONTLE MÉXICO
   </text>
 
   <!-- Right accent line -->
-  <line x1="368" y1="202" x2="445" y2="202" stroke="#B59353" stroke-width="2" />
+  <line x1="368" y1="202" x2="445" y2="202" stroke="#E2C285" stroke-width="2" />
 </svg>

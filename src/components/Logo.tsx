@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface LogoProps {
   variant?: 'dark' | 'light' | 'white';
@@ -15,6 +15,7 @@ export const Logo: React.FC<LogoProps> = ({
   size = 'md',
   layout = 'horizontal'
 }) => {
+  const [imageError, setImageError] = useState(false);
   const isLight = variant === 'light' || variant === 'white';
 
   // Primary brand colors based on the official logo
@@ -23,6 +24,13 @@ export const Logo: React.FC<LogoProps> = ({
   const birdInnerBg = isLight ? '#0F172A' : '#FFFFFF';
   const goldColor = isLight ? '#F3CA7E' : '#B59353';
   const secondaryGold = isLight ? '#E2C285' : '#9E7C3E';
+
+  const imageSizes = {
+    sm: 'h-8 sm:h-9 max-w-[190px]',
+    md: 'h-11 sm:h-12 max-w-[250px]',
+    lg: 'h-16 sm:h-18 max-w-[340px]',
+    xl: 'h-24 sm:h-28 max-w-[440px]'
+  };
 
   const iconSizes = {
     sm: 'w-7 h-7',
@@ -45,7 +53,34 @@ export const Logo: React.FC<LogoProps> = ({
     xl: 'text-xs tracking-[0.25em]'
   };
 
-  // Cenzontle Bird Vector Mark
+  // Render official logo image downloaded directly from user's GitHub repository
+  if (!imageError) {
+    if (isLight) {
+      return (
+        <div className={`inline-flex items-center select-none bg-[#FAF9F5] px-3.5 py-2 rounded-lg border border-stone-200/70 shadow-xs ${className}`}>
+          <img
+            src="/logo-grupo-cenzontle.png"
+            alt="Grupo Cenzontle México"
+            onError={() => setImageError(true)}
+            className={`w-auto ${imageSizes[size]} object-contain transition-transform duration-300 group-hover:scale-[1.02]`}
+          />
+        </div>
+      );
+    }
+
+    return (
+      <div className={`inline-flex items-center select-none ${className}`}>
+        <img
+          src="/logo-grupo-cenzontle.png"
+          alt="Grupo Cenzontle México"
+          onError={() => setImageError(true)}
+          className={`w-auto ${imageSizes[size]} object-contain drop-shadow-xs transition-transform duration-300 group-hover:scale-[1.02]`}
+        />
+      </div>
+    );
+  }
+
+  // Cenzontle Bird Vector Mark (Fallback)
   const BirdIcon = (
     <div className={`relative flex items-center justify-center shrink-0 ${iconSizes[size]}`}>
       <svg 
